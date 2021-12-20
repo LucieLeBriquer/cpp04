@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:50:19 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 23:13:06 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/12/20 23:45:08 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 {
-	this->printIdeas();
 	std::cout << YELLOW << "[Cat]" << END << "constructor called" << std::endl;
 }
 
