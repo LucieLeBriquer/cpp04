@@ -12,6 +12,14 @@
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
+# define RED "\x1B[31m"
+# define GREEN "\x1B[32m"
+# define YELLOW "\x1B[33m"
+# define ORANGE "\x1B[34m"
+# define PURPLE "\x1B[35m"
+# define BLUE "\x1B[36m"
+# define END "\033[0m"
+# define PRINT_LOG 0
 # include <iostream>
 # include "ICharacter.hpp"
 
@@ -35,5 +43,7 @@ class AMateria
 		virtual	AMateria	*clone() const = 0;
 		virtual void		use(ICharacter &target);
 };
+
+std::string		embed(const std::string str, const std::string color, int size = 11);
 
 #endif

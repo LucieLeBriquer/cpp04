@@ -35,7 +35,6 @@ static void	printTitle(std::string title)
 	std::cout << toPrint.substr(n / 2, n);
 	std::cout << std::setfill('=') << std::setw(size / 2 - n + n / 2) << "" << std::endl;
 	std::cout << std::setfill('=') << std::setw(size) << "" << std::endl;
-
 }
 
 static void	testLeaks(void)

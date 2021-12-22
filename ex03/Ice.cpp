@@ -18,17 +18,21 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-	return ;
+	if (PRINT_LOG)
+		std::cout << embed("Ice", YELLOW) << "constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &ice)
 {
+	if (PRINT_LOG)
+		std::cout << embed("Ice", YELLOW) << "copy constructor called" << std::endl;
 	*this = ice;
 }
 
 Ice::~Ice()
 {
-	return ;
+	if (PRINT_LOG)
+		std::cout << embed("Ice", RED) << "destructor called" << std::endl;
 }
 
 /*
@@ -49,10 +53,10 @@ Ice	&Ice::operator=(const Ice &ice)
 */
 Ice		*Ice::clone() const
 {
-	return (new Ice());
+	return (new Ice(*this));
 }
 
 void	Ice::use(ICharacter &target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "shoots an ice bolt at " << target.getName() << std::endl;
 };

@@ -18,17 +18,21 @@
 
 Cure::Cure(void) : AMateria("cure")
 {
-	return ;
+	if (PRINT_LOG)
+		std::cout << embed("Cure", YELLOW) << "constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &cure)
 {
+	if (PRINT_LOG)
+		std::cout << embed("Cure", YELLOW) << "copy constructor called" << std::endl;
 	*this = cure;
 }
 
 Cure::~Cure()
 {
-	return ;
+	if (PRINT_LOG)
+		std::cout << embed("Cure", RED) << "destructor called" << std::endl;
 }
 
 /*
@@ -49,10 +53,10 @@ Cure	&Cure::operator=(const Cure &cure)
 */
 Cure		*Cure::clone() const
 {
-	return (new Cure());
+	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "heals " << target.getName() << "'s wounds" << std::endl;
 };
