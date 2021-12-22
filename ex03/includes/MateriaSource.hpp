@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 15:49:40 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/22 15:49:40 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/12/22 20:06:35 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 class MateriaSource : public IMateriaSource
 {
 	protected:
-		AMateria	*_inventory[4];
+		static const int	_inventorySize = 4;
+		AMateria			*_inventory[_inventorySize];
 		
 	public:
 		MateriaSource(void);

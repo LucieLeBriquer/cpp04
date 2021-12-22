@@ -20,7 +20,7 @@ MateriaSource::MateriaSource(void)
 {
 	if (PRINT_LOG)
 		std::cout << embed("MateriaSource", YELLOW)  << "constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 		_inventory[i] = NULL;
 }
 
@@ -35,7 +35,7 @@ MateriaSource::~MateriaSource()
 {
 	if (PRINT_LOG)
 		std::cout << embed("MateriaSource", RED) << "destructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i])
 			delete _inventory[i];
@@ -50,7 +50,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &materiaSource)
 {
 	if (this != &materiaSource)
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < _inventorySize; i++)
 		{
 			if (_inventory[i])
 				delete _inventory[i];
@@ -69,7 +69,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &materiaSource)
 
 void		MateriaSource::learnMateria(AMateria *m)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i] == NULL)
 		{
@@ -85,7 +85,7 @@ void		MateriaSource::learnMateria(AMateria *m)
 
 AMateria	*MateriaSource::createMateria(const std::string &type)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i] != NULL && _inventory[i]->getType() == type)
 			return (_inventory[i]->clone());

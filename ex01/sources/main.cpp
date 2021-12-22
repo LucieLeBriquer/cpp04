@@ -6,14 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 22:47:37 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 22:47:37 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/12/22 20:11:05 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "Dog.hpp"
 #include "Cat.hpp"
-#define SIZE 5
 
 static void	printTitle(std::string title)
 {
@@ -63,24 +62,24 @@ static void	testDeepCopy(void)
 	cat2.printIdeas();
 }
 
-static void	testSubject(void)
+static void	testSubject(int size)
 {
 	printTitle("SUBJECT");
-	Animal	*arrayAnimals[2 * SIZE];
+	Animal	*arrayAnimals[2 * size];
 
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < size; i++)
 	{
 		arrayAnimals[i] = new Dog();
-		arrayAnimals[SIZE + i] = new Cat();
+		arrayAnimals[size + i] = new Cat();
 	}
 
-	for (int i = 0; i < 2 * SIZE; i++)
+	for (int i = 0; i < 2 * size; i++)
 		delete arrayAnimals[i];
 }
 
 int	main(void)
 {
-	testSubject();
+	testSubject(5);
 	testLeaks();
 	testDeepCopy();
 	return (0);

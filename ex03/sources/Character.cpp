@@ -20,7 +20,7 @@ Character::Character(void) : _name("random")
 {
 	if (PRINT_LOG)
 		std::cout << embed("Character", YELLOW) << "constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 		_inventory[i] = NULL;
 }
 
@@ -29,7 +29,7 @@ Character::Character(const std::string &name) : _name(name)
 {
 	if (PRINT_LOG)
 		std::cout << embed("Character", YELLOW) << "constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 		_inventory[i] = NULL;
 }
 
@@ -44,7 +44,7 @@ Character::~Character()
 {
 	if (PRINT_LOG)
 		std::cout << embed("Character", RED) << "destructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i] != NULL)
 			delete _inventory[i];
@@ -60,7 +60,7 @@ Character	&Character::operator=(const Character &character)
 	if (this != &character)
 	{
 		_name = character._name;
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < _inventorySize; i++)
 		{
 			if (_inventory[i])
 				delete _inventory[i];
@@ -86,7 +86,7 @@ void	Character::equip(AMateria *m)
 {
 	
 	std::cout << embed(_name, BLUE);
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i] == NULL)
 		{
@@ -102,7 +102,7 @@ void	Character::equip(AMateria *m)
 
 void	Character::unequip(int idx)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < _inventorySize)
 	{
 		std::cout << embed(_name, BLUE) << "unequips " << _inventory[idx]->getType() << " from slot " << idx << std::endl;
 		_inventory[idx] = NULL;
@@ -112,7 +112,7 @@ void	Character::unequip(int idx)
 void	Character::use(int idx, ICharacter &target)
 {
 	std::cout << embed(_name, GREEN);
-	if (_inventory[idx])
+	if (idx >= 0 && idx < _inventorySize && _inventory[idx])
 	{
 		_inventory[idx]->use(target);
 		return ;
@@ -143,7 +143,7 @@ static std::string	centering(const std::string str, int size = 6)
 void	Character::printInventory(void) const
 {
 	std::cout << embed(_name, ORANGE) << "|";
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < _inventorySize; i++)
 	{
 		if (_inventory[i])
 			std::cout << centering(_inventory[i]->getType()) << "|";

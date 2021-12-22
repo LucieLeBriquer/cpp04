@@ -58,7 +58,6 @@ void	Dog::makeSound(void) const
 
 void	Dog::printIdeas(void) const
 {
-	
 	this->_brain->printFirstIdeas();
 	std::cout << " at " << &this->_brain << std::endl;
 }

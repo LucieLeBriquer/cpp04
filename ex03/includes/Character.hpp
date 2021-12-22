@@ -17,8 +17,9 @@
 class Character : public ICharacter
 {
 	protected:
-		AMateria	*_inventory[4];
-		std::string	_name;
+		static const int	_inventorySize = 4;
+		AMateria			*_inventory[_inventorySize];
+		std::string			_name;
 		
 	public:
 		Character(void);
