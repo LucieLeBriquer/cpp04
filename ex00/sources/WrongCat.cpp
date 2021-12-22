@@ -18,18 +18,18 @@
 
 WrongCat::WrongCat(void) : WrongAnimal("Cat")
 {
-	std::cout << YELLOW << "[WrongCat]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[WrongCat]" << END << " constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &wrongCat)
 {
-	std::cout << YELLOW << "[WrongCat]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[WrongCat]" << END << " copy constructor called" << std::endl;
 	*this = wrongCat;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << RED << "[WrongCat]" << END << "destructor called" << std::endl;
+	std::cout << RED << "[WrongCat]" << END << " destructor called" << std::endl;
 }
 
 /*

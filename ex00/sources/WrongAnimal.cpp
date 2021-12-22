@@ -18,23 +18,23 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	std::cout << YELLOW << "[WrongAnimal]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[WrongAnimal]" << END << " constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const std::string &type) : _type(type)
 {
-	std::cout << YELLOW << "[WrongAnimal]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[WrongAnimal]" << END << " constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &wrongAnimal)
 {
-	std::cout << YELLOW << "[WrongAnimal]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[WrongAnimal]" << END << " copy constructor called" << std::endl;
 	*this = wrongAnimal;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << YELLOW << "[WrongAnimal]" << END << "destructor called" << std::endl;
+	std::cout << YELLOW << "[WrongAnimal]" << END << " destructor called" << std::endl;
 }
 
 /*

@@ -19,7 +19,10 @@ static std::string	randomString(int size)
 	std::string			randomStr = "";
 
 	for (int i = 0; i < size; i++)
-		randomStr += alphaNum[(rand() + add++) % 26];
+	{
+		add += 11;
+		randomStr += alphaNum[add % 26];
+	}
 	return (randomStr);
 }
 
@@ -29,16 +32,14 @@ static std::string	randomString(int size)
 
 Brain::Brain(void)
 {
-	srand(time(NULL));
-	std::cout << YELLOW << "[Brain]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Brain]" << END << " constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = randomString(5);
 }
 
 Brain::Brain(const Brain &brain)
 {
-	srand(time(NULL));
-	std::cout << YELLOW << "[Brain]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Brain]" << END << " copy constructor called" << std::endl;
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = randomString(5);
 	*this = brain;
@@ -46,7 +47,7 @@ Brain::Brain(const Brain &brain)
 
 Brain::~Brain()
 {
-	std::cout << RED << "[Brain]" << END << "destructor called" << std::endl;
+	std::cout << RED << "[Brain]" << END << " destructor called" << std::endl;
 }
 
 /*

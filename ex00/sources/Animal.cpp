@@ -18,23 +18,23 @@
 
 Animal::Animal(void) : _type("Unknown")
 {
-	std::cout << YELLOW << "[Animal]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Animal]" << END << " constructor called" << std::endl;
 }
 
 Animal::Animal(const std::string &type) : _type(type)
 {
-	std::cout << YELLOW << "[Animal]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Animal]" << END << " constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &animal)
 {
-	std::cout << YELLOW << "[Animal]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Animal]" << END << " copy constructor called" << std::endl;
 	*this = animal;
 }
 
 Animal::~Animal()
 {
-	std::cout << RED << "[Animal]" << END << "destructor called" << std::endl;
+	std::cout << RED << "[Animal]" << END << " destructor called" << std::endl;
 }
 
 /* 

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 21:49:54 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 23:05:52 by lle-briq         ###   ########.fr       */
+/*   Created: 2021/12/20 21:50:19 by lle-briq          #+#    #+#             */
+/*   Updated: 2021/12/20 23:13:06 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 **		CONSTRUCTORS AND DESTRUCTOR
 */
 
-Dog::Dog(void) : Animal("Dog"), _brain(new Brain())
+Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 {
 	this->printIdeas();
-	std::cout << YELLOW << "[Dog]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &dog) : Animal(dog), _brain(new Brain(*(dog._brain)))
+Cat::Cat(const Cat &cat) : Animal(cat), _brain(new Brain(*(cat._brain)))
 {
-	std::cout << YELLOW << "[Dog]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " copy constructor called" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << RED << "[Dog]" << END << "destructor called" << std::endl;
+	std::cout << RED << "[Cat]" << END << " destructor called" << std::endl;
 	delete _brain;
 }
 
@@ -37,12 +37,12 @@ Dog::~Dog()
 **		OVERLOAD OPERATORS
 */
 
-Dog	&Dog::operator=(const Dog &dog)
+Cat	&Cat::operator=(const Cat &cat)
 {
-	if (this != &dog)
+	if (this != &cat)
 	{
-		this->_type = dog._type;
-		this->_brain = dog._brain;
+		this->_type = cat._type;
+		this->_brain = cat._brain;
 	}
 	return (*this);
 }
@@ -51,14 +51,13 @@ Dog	&Dog::operator=(const Dog &dog)
 **		MEMBER FUNCTIONS
 */
 
-void	Dog::makeSound(void) const
+void	Cat::makeSound(void) const
 {
-	std::cout << "*woof-woof*" << std::endl;
+	std::cout << "*meooow*" << std::endl;
 }
 
-void	Dog::printIdeas(void) const
+void	Cat::printIdeas(void) const
 {
-	
 	this->_brain->printFirstIdeas();
 	std::cout << " at " << &this->_brain << std::endl;
 }

@@ -18,18 +18,18 @@
 
 Dog::Dog(void) : Animal("Dog")
 {
-	std::cout << YELLOW << "[Dog]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Dog]" << END << " constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &dog)
 {
-	std::cout << YELLOW << "[Dog]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Dog]" << END << " copy constructor called" << std::endl;
 	*this = dog;
 }
 
 Dog::~Dog()
 {
-	std::cout << RED << "[Dog]" << END << "destructor called" << std::endl;
+	std::cout << RED << "[Dog]" << END << " destructor called" << std::endl;
 }
 
 /*

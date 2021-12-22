@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:50:19 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 23:13:06 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/12/20 21:50:19 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,20 @@
 **		CONSTRUCTORS AND DESTRUCTOR
 */
 
-Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
+Cat::Cat(void) : Animal("Cat")
 {
-	this->printIdeas();
-	std::cout << YELLOW << "[Cat]" << END << "constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &cat) : Animal(cat), _brain(new Brain(*(cat._brain)))
+Cat::Cat(const Cat &cat)
 {
-	std::cout << YELLOW << "[Cat]" << END << "copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " copy constructor called" << std::endl;
+	*this = cat;
 }
 
 Cat::~Cat()
 {
-	std::cout << RED << "[Cat]" << END << "destructor called" << std::endl;
-	delete _brain;
+	std::cout << RED << "[Cat]" << END << " destructor called" << std::endl;
 }
 
 /*
@@ -42,7 +41,6 @@ Cat	&Cat::operator=(const Cat &cat)
 	if (this != &cat)
 	{
 		this->_type = cat._type;
-		this->_brain = cat._brain;
 	}
 	return (*this);
 }
@@ -54,10 +52,4 @@ Cat	&Cat::operator=(const Cat &cat)
 void	Cat::makeSound(void) const
 {
 	std::cout << "*meooow*" << std::endl;
-}
-
-void	Cat::printIdeas(void) const
-{
-	this->_brain->printFirstIdeas();
-	std::cout << " at " << &this->_brain << std::endl;
 }
