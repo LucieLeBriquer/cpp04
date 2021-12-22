@@ -1,16 +1,17 @@
-CC			= clang++ -Wall -Wextra -Werror
+CC			= clang++ -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 NAME		= ./materia
 NAME_SHORT	= materia
 
-INCS_DIR	= .
+INCS_DIR	= ./includes/
 MAIN_INC	= -I$(INCS_DIR)
 INCS		= $(shell find $(INCS_DIR) -type f -name "*.hpp")
 
-SRCS_DIR 	= .
+SRCS_DIR 	= ./sources/
 SRCS		= $(shell find $(SRCS_DIR) -type f -name "*.cpp")
 
-OBJS		= $(SRCS:.cpp=.o)
+OBJS_DIR	= ./objects/
+OBJS		= $(SRCS:$(SRCS_DIR)%.cpp=$(OBJS_DIR)%.o)
 
 _COLOR		= \033[32m
 _BOLDCOLOR	= \033[32;1m
@@ -18,7 +19,8 @@ _RESET		= \033[0m
 _CLEAR		= \033[0K\r\c
 _OK			= [\033[32mOK\033[0m]
 
-%.o			: %.cpp
+$(OBJS_DIR)%.o	: $(SRCS_DIR)%.cpp
+			@mkdir -p $(OBJS_DIR)
 			@echo "[..] $(NAME_SHORT)... compiling $*.cpp\r\c"
 			@$(CC) $(MAIN_INC) -c $< -o $@
 			@echo "$(_CLEAR)"
@@ -30,7 +32,7 @@ $(NAME)		: $(OBJS) $(INCS)
 			@echo "$(_OK) $(NAME_SHORT) compiled"
 
 clean		:
-			@$(RM) $(OBJS)
+			@$(RM) $(OBJS_DIR)
 
 fclean		: clean
 			@$(RM) $(NAME)
