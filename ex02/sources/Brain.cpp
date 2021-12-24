@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 22:41:46 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 23:17:02 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/12/24 23:58:04 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 static std::string	randomString(int size)
 {
-	static int			add;
 	const std::string	alphaNum = "abcdefghijklmnopqrstuvwxyz";
 	std::string			randomStr = "";
 
 	for (int i = 0; i < size; i++)
-	{
-		add += 11;
-		randomStr += alphaNum[add % 26];
-	}
+		randomStr += alphaNum[std::rand() % alphaNum.size()];
 	return (randomStr);
 }
 

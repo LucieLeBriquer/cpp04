@@ -17,7 +17,7 @@
 static void	printTitle(std::string title)
 {
 	std::string	toPrint;
-	int	size = 50;
+	int	size = 60;
 	int	n;
 
 	toPrint = " " + title + " ";
@@ -32,7 +32,7 @@ static void	printTitle(std::string title)
 	std::cout << std::endl << std::setfill('=') << std::setw(size) << "" << std::endl;
 	std::cout << std::setw(size / 2) << toPrint.substr(0, n / 2);
 	std::cout << toPrint.substr(n / 2, n);
-	std::cout << std::setfill('=') << std::setw(size / 2 - n + n / 2) << "" << std::endl;
+	std::cout << std::setfill('=') << std::setw(size - size / 2 - n + n / 2) << "" << std::endl;
 	std::cout << std::setfill('=') << std::setw(size) << "" << std::endl;
 }
 
@@ -79,6 +79,7 @@ static void	testSubject(int size)
 
 int	main(void)
 {
+	srand((unsigned int)time(NULL));
 	testSubject(5);
 	testLeaks();
 	testDeepCopy();

@@ -14,15 +14,11 @@
 
 static std::string	randomString(int size)
 {
-	static int			add;
 	const std::string	alphaNum = "abcdefghijklmnopqrstuvwxyz";
 	std::string			randomStr = "";
 
 	for (int i = 0; i < size; i++)
-	{
-		add += 11;
-		randomStr += alphaNum[add % 26];
-	}
+		randomStr += alphaNum[std::rand() % alphaNum.size()];
 	return (randomStr);
 }
 

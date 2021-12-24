@@ -20,6 +20,8 @@
 # define BLUE "\x1B[36m"
 # define END "\033[0m"
 # include <iostream>
+# include <ctime>
+# include <cstdlib>
 
 class Brain
 {

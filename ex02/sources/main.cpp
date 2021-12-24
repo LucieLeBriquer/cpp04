@@ -16,6 +16,7 @@
 
 int	main(void)
 {
+	srand((unsigned int)time(NULL));
 	Cat	cat;
 	Dog	dog;
 	//Animal	animal;
