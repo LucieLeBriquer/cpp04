@@ -27,12 +27,13 @@ class Brain
 {
 	protected:
 		std::string	_ideas[100];
-		Brain	&operator=(const Brain &brain);
 		
 	public:
 		Brain(void);
 		Brain(const Brain &brain);
 		virtual ~Brain();
+
+		Brain	&operator=(const Brain &brain);
 
 		void	printFirstIdeas(void) const;
 };

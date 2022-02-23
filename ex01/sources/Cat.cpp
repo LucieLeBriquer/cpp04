@@ -19,17 +19,17 @@
 Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 {
 	this->printIdeas();
-	std::cout << YELLOW << "[Cat]" << END << " constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " constructor called" << std::endl << std::endl;
 }
 
 Cat::Cat(const Cat &cat) : Animal(cat), _brain(new Brain(*(cat._brain)))
 {
-	std::cout << YELLOW << "[Cat]" << END << " copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Cat]" << END << " copy constructor called" << std::endl << std::endl;
 }
 
 Cat::~Cat()
 {
-	std::cout << RED << "[Cat]" << END << " destructor called" << std::endl;
+	std::cout << std::endl << RED << "[Cat]" << END << " destructor called" << std::endl;
 	delete _brain;
 }
 
@@ -42,7 +42,7 @@ Cat	&Cat::operator=(const Cat &cat)
 	if (this != &cat)
 	{
 		this->_type = cat._type;
-		this->_brain = cat._brain;
+		*(this->_brain) = *(cat._brain);
 	}
 	return (*this);
 }

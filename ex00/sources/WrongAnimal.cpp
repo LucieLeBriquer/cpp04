@@ -16,7 +16,7 @@
 **		CONSTRUCTORS AND DESTRUCTOR
 */
 
-WrongAnimal::WrongAnimal(void)
+WrongAnimal::WrongAnimal(void) : _type("Unknown")
 {
 	std::cout << YELLOW << "[WrongAnimal]" << END << " constructor called" << std::endl;
 }
@@ -34,7 +34,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &wrongAnimal)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << YELLOW << "[WrongAnimal]" << END << " destructor called" << std::endl;
+	std::cout << RED << "[WrongAnimal]" << END << " destructor called" << std::endl;
 }
 
 /*

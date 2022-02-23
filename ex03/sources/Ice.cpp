@@ -22,7 +22,7 @@ Ice::Ice(void) : AMateria("ice")
 		std::cout << embed("Ice", YELLOW) << "constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &ice)
+Ice::Ice(const Ice &ice) : AMateria(ice)
 {
 	if (PRINT_LOG)
 		std::cout << embed("Ice", YELLOW) << "copy constructor called" << std::endl;

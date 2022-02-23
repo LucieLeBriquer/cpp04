@@ -22,7 +22,7 @@ Cure::Cure(void) : AMateria("cure")
 		std::cout << embed("Cure", YELLOW) << "constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &cure)
+Cure::Cure(const Cure &cure) : AMateria(cure)
 {
 	if (PRINT_LOG)
 		std::cout << embed("Cure", YELLOW) << "copy constructor called" << std::endl;

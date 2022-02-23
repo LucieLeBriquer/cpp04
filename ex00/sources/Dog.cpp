@@ -21,7 +21,7 @@ Dog::Dog(void) : Animal("Dog")
 	std::cout << YELLOW << "[Dog]" << END << " constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &dog)
+Dog::Dog(const Dog &dog) : Animal(dog)
 {
 	std::cout << YELLOW << "[Dog]" << END << " copy constructor called" << std::endl;
 	*this = dog;

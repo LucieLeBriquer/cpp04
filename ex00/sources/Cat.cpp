@@ -21,7 +21,7 @@ Cat::Cat(void) : Animal("Cat")
 	std::cout << YELLOW << "[Cat]" << END << " constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &cat)
+Cat::Cat(const Cat &cat) : Animal("Cat")
 {
 	std::cout << YELLOW << "[Cat]" << END << " copy constructor called" << std::endl;
 	*this = cat;

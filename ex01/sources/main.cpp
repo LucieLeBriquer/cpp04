@@ -55,6 +55,13 @@ static void	testDeepCopy(void)
 	dog1.printIdeas();
 	dog2.printIdeas();
 
+	dog2 = dog1;
+	std::cout << std::endl << "After assignation :" << std::endl;
+	dog1.printIdeas();
+	dog2.printIdeas();
+
+	std::cout << std::endl;
+
 	Cat	cat1;
 	Cat	cat2(cat1);
 

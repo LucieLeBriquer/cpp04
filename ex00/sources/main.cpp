@@ -26,7 +26,7 @@ static void	wrongTest(void)
 
 static void	subjectTest(void)
 {
-	const Animal	*m = new Animal();
+	const Animal	*meta = new Animal();
 	const Animal	*j = new Dog();
 	const Animal	*i = new Cat();
 
@@ -34,17 +34,18 @@ static void	subjectTest(void)
 	j->makeSound();
 	std::cout << "i is " << i->getType() << " : ";
 	i->makeSound();
-	std::cout << "m is " << m->getType() << " : ";
-	m->makeSound();
+	std::cout << "m is " << meta->getType() << " : ";
+	meta->makeSound();
 
 	delete i;
 	delete j;
-	delete m;
+	delete meta;
 }
 
 int	main(void)
 {
 	subjectTest();
+	std::cout << std::endl;
 	wrongTest();
 	return (0);
 }

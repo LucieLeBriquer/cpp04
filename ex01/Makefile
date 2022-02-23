@@ -1,4 +1,4 @@
-CC			= clang++ -Wall -Wextra -Werror -std=c++98
+CC			= c++ -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 NAME		= ./brains
 NAME_SHORT	= brains

@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:49:54 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/20 23:05:52 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:37:04 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 Dog::Dog(void) : Animal("Dog"), _brain(new Brain())
 {
 	this->printIdeas();
-	std::cout << YELLOW << "[Dog]" << END << " constructor called" << std::endl;
+	std::cout << YELLOW << "[Dog]" << END << " constructor called" << std::endl << std::endl;
 }
 
 Dog::Dog(const Dog &dog) : Animal(dog), _brain(new Brain(*(dog._brain)))
 {
-	std::cout << YELLOW << "[Dog]" << END << " copy constructor called" << std::endl;
+	std::cout << YELLOW << "[Dog]" << END << " copy constructor called" << std::endl << std::endl;
 }
 
 Dog::~Dog()
 {
-	std::cout << RED << "[Dog]" << END << " destructor called" << std::endl;
+	std::cout << std::endl << RED << "[Dog]" << END << " destructor called" << std::endl;
 	delete _brain;
 }
 
@@ -42,7 +42,7 @@ Dog	&Dog::operator=(const Dog &dog)
 	if (this != &dog)
 	{
 		this->_type = dog._type;
-		this->_brain = dog._brain;
+		*(this->_brain) = *(dog._brain);
 	}
 	return (*this);
 }
