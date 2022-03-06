@@ -41,22 +41,19 @@ Cure::~Cure()
 
 Cure	&Cure::operator=(const Cure &cure)
 {
-	if (this != &cure)
-	{
-		this->_type = cure._type;
-	}
+	(void)cure;
 	return (*this);
 }
 
 /*
 **		MEMBER FUNCTIONS
 */
-Cure		*Cure::clone() const
+Cure	*Cure::clone() const
 {
 	return (new Cure(*this));
 }
 
 void	Cure::use(ICharacter &target)
 {
-	std::cout << "heals " << target.getName() << "'s wounds" << std::endl;
-};
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

@@ -14,8 +14,6 @@
 
 class Cure : public AMateria
 {
-	protected:
-		
 	public:
 		Cure(void);
 		Cure(const Cure &cure);

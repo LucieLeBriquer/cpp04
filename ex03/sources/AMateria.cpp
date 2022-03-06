@@ -43,9 +43,7 @@ AMateria::~AMateria()
 AMateria	&AMateria::operator=(const AMateria &aMateria)
 {
 	if (this != &aMateria)
-	{
 		_type = aMateria._type;
-	}
 	return (*this);
 }
 

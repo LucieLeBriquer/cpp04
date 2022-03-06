@@ -41,16 +41,14 @@ Ice::~Ice()
 
 Ice	&Ice::operator=(const Ice &ice)
 {
-	if (this != &ice)
-	{
-		this->_type = ice._type;
-	}
+	(void)ice;
 	return (*this);
 }
 
 /*
 **		MEMBER FUNCTIONS
 */
+
 Ice		*Ice::clone() const
 {
 	return (new Ice(*this));
@@ -58,5 +56,5 @@ Ice		*Ice::clone() const
 
 void	Ice::use(ICharacter &target)
 {
-	std::cout << "shoots an ice bolt at " << target.getName() << std::endl;
-};
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

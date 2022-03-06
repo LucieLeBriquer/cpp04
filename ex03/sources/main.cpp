@@ -46,8 +46,8 @@ static void testSubject(void)
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
+	ICharacter*	me = new Character("me");
+	AMateria*	tmp;
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -68,11 +68,12 @@ static void	testCharacter(void)
 	printTitle("CHARACTER");
 	ICharacter	*hero = new Character("Lucie");
 	ICharacter	*enemy = new Character("Correcteur");
-	Ice			*ice = new Ice();
+	AMateria	*ice = new Ice();
 
 	hero->equip(new Ice());
 	hero->equip(ice);
 	hero->equip(new Cure());
+	hero->equip(new Ice());
 	hero->equip(new Ice());
 	enemy->equip(new Cure());
 	enemy->equip(new Cure());

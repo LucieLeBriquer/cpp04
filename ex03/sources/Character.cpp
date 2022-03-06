@@ -46,7 +46,7 @@ Character::~Character()
 		std::cout << embed("Character", RED) << "destructor called" << std::endl;
 	for (int i = 0; i < _inventorySize; i++)
 	{
-		if (_inventory[i] != NULL)
+		if (_inventory[i])
 			delete _inventory[i];
 	}
 }

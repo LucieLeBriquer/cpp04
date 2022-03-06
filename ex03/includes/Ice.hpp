@@ -14,8 +14,6 @@
 
 class Ice : public AMateria
 {
-	protected:
-		
 	public:
 		Ice(void);
 		Ice(const Ice &ice);
