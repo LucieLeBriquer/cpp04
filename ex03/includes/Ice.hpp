@@ -6,11 +6,13 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 00:08:09 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/12/21 00:14:10 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:00:22 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#ifndef ICE_HPP
+# define ICE_HPP
+# include "AMateria.hpp"
 
 class Ice : public AMateria
 {
@@ -24,3 +26,5 @@ class Ice : public AMateria
 		Ice		*clone() const;
 		void	use(ICharacter &target);
 };
+
+#endif
